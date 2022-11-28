@@ -217,7 +217,7 @@ class MaxConvClickAPI
         if (!is_array($bodyArr)) {
             return [
                 'success'=>false,
-                'errorMessage'=>"None-jason response"
+                'errorMessage'=>"None-jason response: {$body}"
             ];
         }
 

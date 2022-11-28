@@ -129,7 +129,8 @@ class MaxConvClickAPI
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_HTTPHEADER => [
                 "User-Agent: MaxConv Click Data API"
-            ]
+            ],
+            CURLOPT_ENCODING=>''
         ]);
 
         //execute
@@ -173,7 +174,7 @@ class MaxConvClickAPI
         unset($headers['Host']);
         $headers['Connection'] = '';
         $headers['Authorization'] = $this->apiKey;
-        $headers['X-Real-IP'] = $_SERVER['REMOTE_ADDR'];
+        $headers['X-Forwarded-For'] = $_SERVER['REMOTE_ADDR'];
         $curlHeaders = [];
         foreach ($headers as $name=>$value) {
             $curlHeaders[] = "{$name}: {$value}";
@@ -188,7 +189,8 @@ class MaxConvClickAPI
             CURLOPT_FORBID_REUSE => false,
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_HTTPHEADER => $curlHeaders
+            CURLOPT_HTTPHEADER => $curlHeaders,
+            CURLOPT_ENCODING=>''
         ]);
 
         //execute

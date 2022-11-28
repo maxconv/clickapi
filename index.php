@@ -169,7 +169,7 @@ class MaxConvClickAPI
     public function fetchClickData()
     {
         //headers
-        $headers = getallheaders();
+        $headers = $this->getAllHeaders();
         unset($headers['Host']);
         $headers['Connection'] = '';
         $headers['Authorization'] = $this->apiKey;
@@ -222,6 +222,36 @@ class MaxConvClickAPI
         }
 
         return $bodyArr;
+    }
+
+    /**
+     * polyfill for getallheaders().
+     *
+     * @return array
+     */
+    public function getAllHeaders()
+    {
+        $headers = array();
+
+        $copy_server = array(
+            'CONTENT_TYPE'   => 'Content-Type',
+            'CONTENT_LENGTH' => 'Content-Length',
+            'CONTENT_MD5'    => 'Content-Md5',
+        );
+
+        foreach ($_SERVER as $key => $value) {
+            if (substr($key, 0, 5) === 'HTTP_') {
+                $key = substr($key, 5);
+                if (!isset($copy_server[$key]) || !isset($_SERVER[$key])) {
+                    $key = str_replace(' ', '-', ucwords(strtolower(str_replace('_', ' ', $key))));
+                    $headers[$key] = $value;
+                }
+            } elseif (isset($copy_server[$key])) {
+                $headers[$copy_server[$key]] = $value;
+            }
+        }
+
+        return $headers;
     }
 
     /**

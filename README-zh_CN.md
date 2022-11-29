@@ -27,7 +27,7 @@
 
     将`Your API Key Here`替换成您的api key，将`Your Campaign Link Here`替换成您的campaign链接, campaign链接应该删去所有的参数，如 `https://demode.maxconvtrk.com/visit/6c3e9664-d5ac-4170-95dd-8a81c85c4603`
 
-3. 初始化API并展示响应的着陆页
+3. 初始化API，并展示相应的着陆页
 
     使用以下代码：
 
@@ -87,7 +87,7 @@ class MaxConvClickAPI
 >Get Offer</a>
 ```
 
-#### 用户点击重定向到offer，此方式可以隐藏着陆页地址
+#### 用户重定向到offer，此方式可以隐藏着陆页地址
 
 **index.php:**
 ```php
@@ -133,4 +133,4 @@ class MaxConvClickAPI
 | getLPClickReportUrl() | 获取用来上报用户点击的URL |
 
 ## 🤝 支持
-`support@maxconv.com`
+`support@maxconv.com`，或者通过在线聊天组件和我们联系，组件位于MaxConv控制面板右上角。

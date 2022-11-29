@@ -25,7 +25,7 @@ English | [简体中文](./README-zh_CN.md)
     // --- config area end --- //
     ```
 
-    with your owner information, remove any any query paramater in campaign url, it should looks like `https://demode.maxconvtrk.com/visit/6c3e9664-d5ac-4170-95dd-8a81c85c4603`
+    with your information, remove any query paramater in campaign url, it should looks like `https://demode.maxconvtrk.com/visit/6c3e9664-d5ac-4170-95dd-8a81c85c4603`
 
 3. Init api and load appropriate lander
 
@@ -87,7 +87,7 @@ class MaxConvClickAPI
 >Get Offer</a>
 ```
 
-#### Send visitors redirect to offer so you can hide referrer
+#### Redirect visitors to offer so you can hide referrer
 
 **index.php:**
 ```php
@@ -133,4 +133,4 @@ class MaxConvClickAPI
 | getLPClickReportUrl() | Return a url that can be used to report a click event |
 
 ## 🤝 Support
-`support@maxconv.com`
+`support@maxconv.com`, or via online chat widget that located on the top right corner of MaxConv panel.

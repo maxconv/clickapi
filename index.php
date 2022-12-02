@@ -7,6 +7,7 @@ $campaignUrl='Your Campaign Url Here';
 
 //init
 $maxconv = new MaxConvClickAPI($campaignUrl, $apiKey);
+
 //load lander
 $maxconv->loadLander();
 
@@ -172,6 +173,8 @@ class MaxConvClickAPI
         //headers
         $headers = $this->getAllHeaders();
         unset($headers['Host']);
+        unset($headers['Content-Type']);
+        unset($headers['Content-Length']);
         $headers['Connection'] = '';
         $headers['Authorization'] = $this->apiKey;
         $headers['X-Forwarded-For'] = $_SERVER['REMOTE_ADDR'];

@@ -1,3 +1,5 @@
 /nginx.conf
 /docker-compose.yml
 /maxconv-clickapi.php
+/maxconv-clickapi-v2.php
+/temp.php

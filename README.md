@@ -6,11 +6,7 @@
 
 <h1 align="center">MaxConv Click API</h1>
 
-**No redirect in entire process**. Get visitor's traffic metrics like country, operating system, browser...etc, or display appropriate lander according to flow rules. 
+This repository is deprecated, download click api file from campaign links
 
-## 📦 How to use
 
-https://maxconv.com/docs/click-api/
-
-## 🤝 Support
-`support@maxconv.com`, or via online chat widget that located on the top right corner of MaxConv panel.
+![camp-link.png](./camp-link.png)
